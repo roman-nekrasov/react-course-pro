@@ -1,14 +1,13 @@
 import React from "react";
+import Homepage from "./pages/Homepage";
 
-import cn from "classnames";
+// import cn from "classnames";
 import s from "./App.module.scss";
 
 const App = () => {
    return (
       <React.StrictMode>
-         <div className={cn(s.header, "block")}>
-            This component is wrote by my hand, not by create-react-app!
-         </div>
+         <Homepage />
       </React.StrictMode>
    );
 };

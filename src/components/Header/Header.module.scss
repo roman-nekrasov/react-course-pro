@@ -1,0 +1,56 @@
+@import "../../globalStyles/variables.scss";
+
+.root {
+   height: 93px;
+   max-width: 1125px;
+   margin: 0 auto;
+}
+
+.wrap {
+   width: 100%;
+   max-width: 1125px;
+   height: 63px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.logo {
+   width: 158px;
+   height: 63px;
+}
+
+.menu {
+   display: flex;
+   gap: 55px;
+
+   &__item {
+      display: block;
+      color: $dark;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: div(29/25);
+      position: relative;
+
+      &::before {
+         content: "";
+         position: absolute;
+         bottom: -5px;
+         left: 50%;
+         transform: translate(-50%, 0);
+         width: 1%;
+         height: 1px;
+         opacity: 0;
+         border: 1px solid $dark;
+         background-color: $dark;
+         transition: opacity, width ease-in-out 0.25s;
+      }
+
+      &:hover {
+         &::before {
+            opacity: 1;
+            width: 100%;
+         }
+      }
+   }
+}
