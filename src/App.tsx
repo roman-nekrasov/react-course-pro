@@ -1,5 +1,5 @@
 import React from "react";
-import Homepage from "./pages/Homepage";
+import Home from "./pages/Home";
 
 // import cn from "classnames";
 import s from "./App.module.scss";
@@ -7,7 +7,7 @@ import s from "./App.module.scss";
 const App = () => {
    return (
       <React.StrictMode>
-         <Homepage />
+         <Home />
       </React.StrictMode>
    );
 };
