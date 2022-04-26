@@ -12,8 +12,8 @@
    justify-content: center;
    align-items: center;
    padding: 0 20px 9px;
-
    cursor: pointer;
+   color: $dark;
 
    font-family: "Karla";
    font-style: normal;
@@ -25,10 +25,21 @@
    align-items: center;
    text-align: center;
 
-   color: $dark;
-
    &:active {
       box-shadow: inset 0px -6px 0px rgba(0, 0, 0, 0.18);
       padding-bottom: 6px;
    }
+}
+
+.fullSize {
+   width: 100%;
+}
+
+.yellow {
+   background: #f2cb07;
+}
+
+.small {
+   height: 55px;
+   font-size: 21px;
 }
