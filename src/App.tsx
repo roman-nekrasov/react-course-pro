@@ -1,13 +1,17 @@
 import React from "react";
-import Home from "./pages/Home";
+import NotFound from "./pages/NotFound/NotFound";
+import routes from "./routes";
 
-// import cn from "classnames";
-import s from "./App.module.scss";
+import { useRoutes } from "hookrouter";
+
+
 
 const App = () => {
+   const match = useRoutes(routes)
+
    return (
       <React.StrictMode>
-         <Home />
+         {match || <NotFound />}
       </React.StrictMode>
    );
 };

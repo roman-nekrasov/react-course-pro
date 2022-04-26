@@ -4,6 +4,7 @@
    height: 93px;
    max-width: 1125px;
    margin: 0 auto;
+   background-color: $third;
 }
 
 .wrap {
@@ -52,5 +53,21 @@
             width: 100%;
          }
       }
+   }
+}
+
+.activeLink {
+   position: relative;
+
+   &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      border: 1px solid $dark;
+      background-color: $dark;
+      opacity: 1;
    }
 }

@@ -1,40 +1,18 @@
 import React from 'react'
-
-import s from './Header.module.scss'
-
+import { A, usePath } from 'hookrouter'
 import {ReactComponent as LogoSvg} from './assets/Logo.svg'
 
+import { GENERAL_MENU } from '../../routes'
 
-interface menu {
-    id: number; 
-    value: string;
-    link: string
-  };
+import cn from 'classnames'
+import s from './Header.module.scss'
 
-const MENU: menu[] = [
-  {
-    id: 1,
-    value: "Home",
-    link: "#"
-  },
-  {
-    id: 2,
-    value: "Pokédex",
-    link: "#"
-  },
-  {
-    id: 3,
-    value: "Legendaries",
-    link: "#"
-  },
-  {
-    id: 4,
-    value: "Documentation",
-    link: "#"
-  },
-]
+
+
 
 const Header: React.FC = () => {
+  const path = usePath();
+
   return (
     <div className={s.root}>
       <div className={s.wrap}>
@@ -42,7 +20,10 @@ const Header: React.FC = () => {
           <LogoSvg />
         </div>
           <ul className={s.menu}>
-            {MENU.map(({id, value, link} )=> (<li className={s.menu__item} key={id}><a href={link}>{value}</a></li>))}
+            {GENERAL_MENU.map(({title, link} )=> (
+              <li className={cn(s.menu__item, {[s.activeLink]: path === link})} key={title}>
+                 <A href={link}>{title}</A>
+              </li>))}
           </ul>
         </div>
     </div>
