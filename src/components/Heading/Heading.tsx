@@ -1,12 +1,6 @@
 import React from 'react'
 
-import s from "./Heading.module.scss"
-
-interface IFontSize {
-    [n: string]: string;
-}
-
-const FONT_SIZE: IFontSize = {
+const FONT_SIZE = {
     h1: "72px",
     h2: "64px",
     h3: "36px",
@@ -16,10 +10,10 @@ const FONT_SIZE: IFontSize = {
     p: "16px",
 
 }
-
+type HeadingType = keyof typeof FONT_SIZE;
 interface HeadingProps {
     children: string;
-    tag: string;
+    tag: HeadingType;
 
 }
 
