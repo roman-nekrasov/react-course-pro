@@ -5,7 +5,7 @@ import s from './Layout.module.scss';
 
 interface LayoutProps {
     children: any;
-    className: string | null
+    className?: string
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, className = null }) => (

@@ -1,0 +1,44 @@
+@import "./../../globalStyles//variables.scss";
+
+.root {
+   background: $danger;
+   min-height: 100vh;
+}
+
+.wrap {
+   position: relative;
+   min-height: 70vh;
+   width: 100%;
+}
+
+.pic404 {
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translate(-50%);
+}
+
+.rocketTeam {
+   width: 40%;
+   position: absolute;
+   top: 25%;
+   left: 50%;
+   transform: translate(-50%);
+}
+
+.title {
+   font-size: 48px;
+   font-weight: 700;
+   font-family: Karla;
+   text-align: center;
+   margin-bottom: 40px;
+}
+
+.title > span {
+   color: #fff;
+}
+.btn {
+   display: flex;
+   justify-content: center;
+}
