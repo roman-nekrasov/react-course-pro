@@ -1,5 +1,6 @@
 import React from "react";
 import NotFound from "./pages/NotFound/NotFound";
+import Header from "./components/Header";
 import routes from "./routes";
 
 import { useRoutes } from "hookrouter";
@@ -11,7 +12,12 @@ const App = () => {
 
    return (
       <React.StrictMode>
-         {match || <NotFound />}
+         {match ? (
+         <>
+            <Header />
+            {match}
+         </>
+         )  : <NotFound />}
       </React.StrictMode>
    );
 };
