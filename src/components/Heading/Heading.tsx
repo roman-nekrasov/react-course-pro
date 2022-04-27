@@ -14,11 +14,12 @@ type HeadingType = keyof typeof FONT_SIZE;
 interface HeadingProps {
     children: string;
     tag: HeadingType;
+    className?: string;
 
 }
 
-const Heading = ( {children, tag}: HeadingProps) => {
-   return  React.createElement(tag, {style: {fontSize: FONT_SIZE[tag]}}, children);
+const Heading = ( {children, tag, className}: HeadingProps) => {
+   return  React.createElement(tag, {style: {fontSize: FONT_SIZE[tag]}, className: className}, children);
 }
 
 export default Heading
