@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
+import { MultiCompiler } from 'webpack';
 
 const FONT_SIZE = {
     h1: "72px",
@@ -12,7 +13,7 @@ const FONT_SIZE = {
 }
 type HeadingType = keyof typeof FONT_SIZE;
 interface HeadingProps {
-    children: string;
+    children: string | ReactNode
     tag: HeadingType;
     className?: string;
 

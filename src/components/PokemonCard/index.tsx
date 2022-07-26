@@ -1,38 +1,44 @@
 import React from 'react';
-// import Heading from './../Heading';
+import Heading from './../Heading/Heading';
+import {pokemonRequest} from './../../types/pokemons'
 
-// import s from './PokemonCard.module.scss';
+import s from './PokemonCard.module.scss';
 
-const PokemonCard = () => {
+interface IPokemonCardProps  {
+    pokemon: pokemonRequest;
+}
+
+const PokemonCard: React.FC<IPokemonCardProps> = ({pokemon}) => {
+    const {name_clean, stats, img, types} = pokemon;
+
     return (
-        <div>some text</div>
-        // <div className={s.root}>
-        //     <div className={s.infoWrap}>
-        //         <Heading size='xs' className={s.titleName}>
-        //             Charmander
-        //         </Heading>
-        //         <div className={s.statWrap}>
-        //             <div className={s.statItem}>
-        //                 <div className={s.statValue}>
-        //                     52
-        //                 </div>
-        //                 Attack
-        //             </div>
-        //             <div className={s.statItem}>
-        //                 <div className={s.statValue}>
-        //                     43
-        //                 </div>
-        //                 Defense
-        //             </div>
-        //         </div>
-        //         <div className={s.labelWrap}>
-        //             <span className={s.label}>Fire</span>
-        //         </div>
-        //     </div>
-        //     <div className={s.pictureWrap}>
-        //         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander" />
-        //     </div>
-        // </div>
+        <div className={s.root}>
+            <div className={s.infoWrap}>
+                <Heading tag='h6' className={s.titleName}>
+                    {name_clean}
+                </Heading>
+                <div className={s.statWrap}>
+                    <div className={s.statItem}>
+                        <div className={s.statValue}>
+                            {stats.attack}
+                        </div>
+                        Attack
+                    </div>
+                    <div className={s.statItem}>
+                        <div className={s.statValue}>
+                            {stats.defense}
+                        </div>
+                        Defense
+                    </div>
+                </div>
+                <div className={s.labelWrap}>
+                   {types.map(type => (<span className={s.label}>{type}</span>))} 
+                </div>
+            </div>
+            <div className={s.pictureWrap}>
+                <img src={img} alt={name_clean} />
+            </div>
+        </div>
     );
 };
 

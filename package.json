@@ -2,6 +2,7 @@
   "name": "react-course-pro",
   "version": "1.0.0",
   "description": "React course",
+  "homepage": "http://5.58.26.76/",
   "scripts": {
     "build:dev": "env NODE_ENV=development webpack --config webpack.config.js",
     "build:prod": "env NODE_ENV=production webpack --config webpack.config.js",
@@ -14,7 +15,8 @@
     "classnames": "^2.3.1",
     "hookrouter": "1.2.3",
     "react": "^16",
-    "react-dom": "^16"
+    "react-dom": "^16",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5",
